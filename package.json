@@ -1,0 +1,32 @@
+{
+  "name": "concat-frames",
+  "version": "1.0.0",
+  "description": "Concatenate a pixel-stream into an array of frames",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "pixel-stream": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devongovett/concat-frames.git"
+  },
+  "keywords": [
+    "pixel-stream",
+    "image"
+  ],
+  "author": "Devon Govett <devongovett@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devongovett/concat-frames/issues"
+  },
+  "homepage": "https://github.com/devongovett/concat-frames"
+}
