@@ -5,9 +5,6 @@ var assert = require('assert');
 describe('concat-frames', function() {
   it('calls the callback with an array of frames', function(done) {
     var s = new PassThrough;
-    s.width = 10;
-    s.height = 10;
-    s.colorSpace = 'rgb';
     
     s.pipe(concat(function(frames) {
       assert.equal(frames.length, 2);
@@ -21,6 +18,12 @@ describe('concat-frames', function() {
       
       done();
     }));
+    
+    s.emit('format', {
+      width: 10,
+      height: 10,
+      colorSpace: 'rgb'
+    });
     
     s.write(new Buffer(10 * 10 * 3));
     s.write(new Buffer(10 * 5 * 3));

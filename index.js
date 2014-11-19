@@ -18,9 +18,9 @@ function ConcatFrames(callback) {
 inherits(ConcatFrames, PixelStream);
 
 ConcatFrames.prototype._startFrame = function(frame, done) {
-  frame.width = frame.width || this.width;
-  frame.height = frame.height || this.height;
-  frame.colorSpace = this.colorSpace;
+  frame.width = frame.width || this.format.width;
+  frame.height = frame.height || this.format.height;
+  frame.colorSpace = this.format.colorSpace;
   this.frames.push(frame);
   this.buffers = [];
   done();
