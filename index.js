@@ -21,7 +21,10 @@ ConcatFrames.prototype._startFrame = function(frame, done) {
   frame.width = frame.width || this.format.width;
   frame.height = frame.height || this.format.height;
   frame.colorSpace = this.format.colorSpace;
-  frame.palette = frame.palette || this.format.palette;
+  
+  if (!frame.palette && this.format.palette)
+    frame.palette = this.format.palette;
+  
   this.frames.push(frame);
   this.buffers = [];
   done();
